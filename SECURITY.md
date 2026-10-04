@@ -10,7 +10,7 @@ The following versions of `swarm-lite` currently receive security updates:
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability within `swarm-lite`, please report it directly to the maintainers via email at **security@moduslabs.dev** or open a private advisory on GitHub.
+If you discover a security vulnerability within `swarm-lite`, please report it directly to the maintainers via email at **modus.labs.znz@gmail.com** or open a private advisory on GitHub.
 
 Please include:
 - A description of the issue.
