@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Ultra-low-token 30+ agent swarm orchestration engine with dynamic adaptive lifecycle control"
 readme = "README.md"
 authors = [
-    { name = "Modus ZNZ", email = "eskobarxp@gmail.com" }
+    { name = "Modus ZNZ", email = "security@moduslabs.dev" }
 ]
 license = { text = "MIT" }
 classifiers = [
