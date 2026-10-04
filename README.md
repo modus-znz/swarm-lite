@@ -1,6 +1,6 @@
 # Swarm-Lite 🐝
 
-> **Ultra-low-token 30+ agent swarm orchestration engine with dynamic adaptive lifecycle control.**
+**Ultra-low-token 30+ agent swarm orchestration engine with dynamic adaptive lifecycle control.**
 
 [![CI Status](https://github.com/modus-znz/swarm-lite/actions/workflows/ci.yml/badge.svg)](https://github.com/modus-znz/swarm-lite/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -8,7 +8,7 @@
 [![Swarm Capacity](https://img.shields.io/badge/swarm--capacity-30%2B%20workers-brightgreen)](#architecture)
 [![Token Budget](https://img.shields.io/badge/token--budget-%E2%89%A41500%20tokens%2Fworker-orange)](#design-decisions)
 
-`swarm-lite` is a lightweight, zero-dependency, pure Python stdlib orchestration library engineered to fan out high-throughput subagent swarms (30+ micro-workers) while strictly constraining context consumption to \(\le 1500\) tokens per worker.
+`swarm-lite` is a lightweight, zero-dependency, pure Python stdlib orchestration library engineered to fan out high-throughput subagent swarms.
 
 ---
 
@@ -18,6 +18,7 @@
 - [Architecture](#architecture)
 - [Quickstart](#quickstart)
 - [Usage](#usage)
+- [Configuration](#configuration)
   - [Python API](#python-api)
   - [CLI Commands](#cli-commands)
   - [Adaptive Lifecycle Policies](#adaptive-lifecycle-policies)
@@ -170,6 +171,17 @@ swarm-lite render
 | `empirical_verification_bounded` | Unit test repair, bug fixing | Runs until test verification passes (`verified=True`) or max turn bound (3 turns) is reached. |
 | `human_interactive_handoff` | High-risk ops, architectural choices | Yields execution to interactive human review (`status='yielded_to_human'`). |
 | `decay_guarded_stop` | Incremental refactoring, exploration | Auto-terminates if 2 consecutive turns produce no diffs or token budget cap is reached. |
+
+---
+
+## Configuration
+
+Configure swarm parameters via environment variables or CLI flags:
+
+| Variable | Description | Default |
+|---|---|---|
+| `SWARM_MEMORY_DB` | Path to SQLite WAL memory bus database | `~/.swarm_memory.db` |
+| `SWARM_MAX_TOKENS_PER_WORKER` | Maximum micro-worker token budget limit | `1500` |
 
 ---
 
